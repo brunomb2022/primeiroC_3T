@@ -1,8 +1,7 @@
 # Terceiro Trimestre
 
-#identificação
-Bruno Marroco - Nr. 4
+## Identificação
+Bruno Marroco Bertonha  - Nr. 4
 
-
-# Conteúdo
-HTML, CSS e JavaScript
+## Conteúdo
+HTML, CSS e javaScript
