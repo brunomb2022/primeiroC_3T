@@ -14,18 +14,52 @@ function escreva(){
 }
 
 function minhaTabuada(){
-    for(let i = 1; i <=10; i++){
+    for(let i = 10; i >= 1; i--){
         document.write("Tabuada do " + i + "<br>");
         for(let j = 1; j <= 10; j++){
-            document.write(i + " x 5 + = " + j + " = " + (j*i) + "<br>");
+            document.write(i + " x " + j + " = " + (j*i) + "<br>");
         }
-document.write("<br>");
+        document.write("<br>");       
     }
 }
 
-function cubo({
+function cubo(){
     for(let i = 20; i >= 2; i--){
-    document.write("o cubo de " + i + "é (" + i "x" + i + "x" + i + ") = "+ (i*i*i)+"<br>");
-
+        document.write("O cubo de "+i+" é "+i+" x "+i+" x "+i+" = "+(i*i*i)+"<br>");
     }
-})
+}
+function moeda(atual){
+    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
+function mat(){  
+    let v = document.getElementById("valor").value;
+    let j = document.getElementById("juros").value;
+    let t = document.getElementById("messes").value;
+  
+    if(!Number(v)){
+        alert("O Capitual deve ser numérico.");
+        document.getElementById("juros").value = "";
+        document.getElementById("juros").focus();
+        return
+    }
+    if(!Number(j)){
+        alert("Juros deve ser número.");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+    }
+    if(!Number(t)){
+        alert("Juros deve ser número.");
+        document.getElementById("meses").value = "";
+        document.getElementById("meses").focus();
+        return
+    }
+    let r = 0;
+    for(let i=1; i<=t; i++){
+        r = v * (1+(j/100));
+        v = r;
+        document.write("Mês " + i + " = " + moeda(r) + "<br>");
+    }
+    document.write("Resultado " + moeda(r));
+}
+document.getElementById("totalGeral").innerHTML = "Total: " +moeda(r);
